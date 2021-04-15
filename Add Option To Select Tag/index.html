@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Option To Select Tag</title>
+</head>
+
+<body>
+
+    <select id="select">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+    </select>
+
+    <input type="text" id="val">
+    <button onclick="insertValue()">Add</button>
+    <script>
+        function insertValue() {
+            var select = document.getElementById("select"),
+                txtVal = document.getElementById("val").value,
+                newOption = document.createElement("OPTION"),
+                newOptionVal = document.createTextNode(txtVal);
+
+            newOption.appendChild(newOptionVal);
+            select.insertBefore(newOption, select.lastChild);
+        }
+    </script>
+</body>
+
+</html>
